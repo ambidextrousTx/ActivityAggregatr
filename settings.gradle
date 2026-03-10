@@ -6,3 +6,6 @@
  */
 
 rootProject.name = "ActivityAggregatr"
+
+include("score-service")
+include("leaderboard-service")
