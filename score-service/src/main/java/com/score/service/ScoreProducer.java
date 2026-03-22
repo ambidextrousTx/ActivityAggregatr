@@ -1,6 +1,6 @@
-package com.ravisomsinha.service;
+package com.score.service;
 
-import com.ravisomsinha.model.ScoreEvent;
+import com.score.model.ScoreEvent;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 

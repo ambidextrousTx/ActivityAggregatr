@@ -1,8 +1,8 @@
-package com.ravisomsinha.controller;
+package com.score.controller;
 
-import com.ravisomsinha.model.ScoreEvent;
-import com.ravisomsinha.model.ScoreSubmission;
-import com.ravisomsinha.service.ScoreProducer;
+import com.score.model.ScoreEvent;
+import com.score.model.ScoreSubmission;
+import com.score.service.ScoreProducer;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

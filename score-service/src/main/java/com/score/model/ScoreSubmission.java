@@ -1,4 +1,4 @@
-package com.ravisomsinha.model;
+package com.score.model;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

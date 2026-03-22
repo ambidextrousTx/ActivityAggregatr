@@ -1,4 +1,4 @@
-package com.ravisomsinha.model;
+package com.score.model;
 
 /**
  * Using playerId as key means all events from the same player
