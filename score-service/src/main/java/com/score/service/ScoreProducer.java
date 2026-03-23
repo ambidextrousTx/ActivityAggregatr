@@ -1,6 +1,6 @@
 package com.score.service;
 
-import com.score.model.ScoreEvent;
+import com.leaderboard.common.ScoreEvent;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 

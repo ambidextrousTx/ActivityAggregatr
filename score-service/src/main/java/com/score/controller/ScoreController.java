@@ -1,6 +1,6 @@
 package com.score.controller;
 
-import com.score.model.ScoreEvent;
+import com.leaderboard.common.ScoreEvent;
 import com.score.model.ScoreSubmission;
 import com.score.service.ScoreProducer;
 import jakarta.validation.Valid;
@@ -25,7 +25,7 @@ public class ScoreController {
             @Valid @RequestBody ScoreSubmission scoreSubmission
             ) {
 
-        var event = new ScoreEvent(
+        ScoreEvent event = new ScoreEvent(
                 scoreSubmission.playerId(),
                 scoreSubmission.game(),
                 scoreSubmission.score(),

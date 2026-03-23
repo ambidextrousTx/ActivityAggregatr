@@ -7,5 +7,4 @@
 
 rootProject.name = "ActivityAggregatr"
 
-include("score-service")
-include("leaderboard-service")
+include("score-service", "leaderboard-service", "common")

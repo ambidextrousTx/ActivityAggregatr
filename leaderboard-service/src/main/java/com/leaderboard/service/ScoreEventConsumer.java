@@ -1,7 +1,7 @@
 package com.leaderboard.service;
 
 import com.leaderboard.model.LeaderboardStore;
-import com.leaderboard.model.ScoreEvent;
+import com.leaderboard.common.ScoreEvent;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
