@@ -1,27 +1,28 @@
 package com.leaderboard.controller;
 
-import com.leaderboard.model.LeaderboardStore;
+import com.leaderboard.model.PlayerScore;
+import com.leaderboard.service.LeaderboardService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
+import java.util.List;
 
 @RestController
 @RequestMapping("/leaderboard")
 public class LeaderboardController {
 
-    private final LeaderboardStore leaderboardStore;
+    private final LeaderboardService service;
 
 
-    public LeaderboardController(LeaderboardStore leaderboardStore) {
-        this.leaderboardStore = leaderboardStore;
+    public LeaderboardController(LeaderboardService service) {
+        this.service = service;
     }
 
     @GetMapping("/{game}")
-    public Map<String, Integer> getLeaderboard(@PathVariable String game) {
-        return leaderboardStore.getLeaderboard(game);
+    public List<PlayerScore> getLeaderboard(@PathVariable String game) {
+        return service.getLeaderboard(game);
     }
 
 }

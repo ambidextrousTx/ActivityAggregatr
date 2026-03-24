@@ -1,6 +1,5 @@
 package com.leaderboard.service;
 
-import com.leaderboard.model.LeaderboardStore;
 import com.leaderboard.common.ScoreEvent;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -8,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ScoreEventConsumer {
-    private final LeaderboardStore store;
+    private final LeaderboardService service;
 
-    public ScoreEventConsumer(LeaderboardStore store) {
-        this.store = store;
+    public ScoreEventConsumer(LeaderboardService service) {
+        this.service = service;
     }
 
     @KafkaListener(topics = "score.events", groupId = "leaderboard-service")
@@ -20,6 +19,6 @@ public class ScoreEventConsumer {
         // key, partition, offset, timestamp — useful for debugging
         ScoreEvent scoreEvent = record.value();
         System.out.println("Consumed: " + scoreEvent);
-        store.addScore(scoreEvent.game(), scoreEvent.playerId(), scoreEvent.score());
+        service.applyScore(scoreEvent);
     }
 }
