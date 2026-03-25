@@ -5,3 +5,9 @@ plugins {
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind'
 }
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:3.3.0"
+    }
+}

@@ -36,3 +36,6 @@ build
 # IntelliJ
 .idea/
 /gradlew
+
+# Ignore H2 data file
+leaderboard-service/data
