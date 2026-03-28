@@ -18,7 +18,8 @@ public class ScoreEventConsumer {
         // ConsumerRecord gives us access to the raw Kafka metadata —
         // key, partition, offset, timestamp — useful for debugging
         ScoreEvent scoreEvent = record.value();
-        System.out.println("Consumed: " + scoreEvent);
-        service.applyScore(scoreEvent);
+        String eventId = record.topic() + "-" + record.partition() + "-" + record.offset();
+        System.out.println("Consuming: " + eventId);
+        service.applyScore(scoreEvent, eventId);
     }
 }
