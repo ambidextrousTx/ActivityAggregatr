@@ -25,16 +25,6 @@ public class LeaderboardService {
 
     @Transactional
     public void applyScore(ScoreEvent event, String eventId) {
-        //TODO - remove this test
-        if (event.score() == 999) {
-            throw new RuntimeException("Simulated transient failure for score=999");
-        }
-
-        //TODO - remove this test
-        if (event.score() < 0) {
-            throw new IllegalArgumentException("Invalid score, cannot be negative: " + event.score());
-        }
-
         if (processedEventRepository.existsById(eventId)) {
             System.out.println("Duplicate event, skipping: " + eventId);
             return;

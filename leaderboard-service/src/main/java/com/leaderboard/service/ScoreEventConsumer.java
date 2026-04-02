@@ -16,7 +16,6 @@ public class ScoreEventConsumer {
         this.service = service;
     }
 
-
     @RetryableTopic(
             attempts = "3",
             backoff = @Backoff(delay = 1000, multiplier = 2),
